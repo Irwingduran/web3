@@ -35,5 +35,22 @@ contract variablesModificadores {
     address public address1 = 0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB;
     address public address2 = msg.sender; //la dirección de la persona que está ejecutando esta función
 
+    //variable de enumeración 
+    enum options {ON, OFF}
+    options state;
+    options constant defaultChoice = options.OFF;
+
+    function turnOn() public {
+        state = options.ON;
+    }
+
+    function turnOff() public {
+        state = options.OFF;
+    }
+
+    function displayState() public view returns (options) {
+        return state;
+    }
+
     
 }
